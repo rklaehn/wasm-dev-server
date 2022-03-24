@@ -1,6 +1,6 @@
 [package]
 name = "wasm-dev-server"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Rüdiger Klaehn"]
 description = "wasm-dev-server is dev web server that adds the headers for cross origin isolation"
 documentation = "https://github.com/rklaehn/wasm-dev-server"
