@@ -1,8 +1,16 @@
 [package]
 name = "wasm-dev-server"
 version = "0.1.0"
+authors = ["Rüdiger Klaehn"]
+description = "wasm-dev-server is dev web server that adds the headers for cross origin isolation"
+documentation = "https://github.com/rklaehn/wasm-dev-server"
+homepage = "https://github.com/rklaehn/wasm-dev-server"
+repository = "https://github.com/rklaehn/wasm-dev-server"
+readme = "README.md"
+keywords = ["cors", "wasm"]
+categories = ["command-line-utilities", "web-programming", "wasm"]
+license  = "MIT"
 edition = "2021"
-
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
