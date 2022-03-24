@@ -25,15 +25,15 @@ async fn main() {
     let mut file = dir.clone();
     file.push("index.html");
 
-    let dir_filter = warp::fs::dir(dir)
-        .map(cross_origin_embedder_policy)
-        .map(cross_origin_opener_policy);
+    let dir_filter = warp::fs::dir(dir);
+    let file_filter = warp::fs::file(file);
+    let cors = warp::cors().allow_any_origin().allow_methods(vec!["GET"]);
 
-    let file_filter = warp::fs::file(file)
+    let filter = dir_filter
+        .or(file_filter)
         .map(cross_origin_embedder_policy)
-        .map(cross_origin_opener_policy);
-
-    let filter = dir_filter.or(file_filter);
+        .map(cross_origin_opener_policy)
+        .with(cors);
 
     warp::serve(filter).run(([127, 0, 0, 1], 3030)).await;
 }
